@@ -1,0 +1,42 @@
+  <div class="span8 offset1">
+    <h2>Articles</h2>
+  
+    <% if @articles.blank? %>
+      <table class="table table-striped">
+        <tr>
+          <td><em>There are no articles in your store.</em></td>
+        </tr>
+      </table>
+    
+    <% else %>
+  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= link_to article.title, "https://#{current_shop.url}/admin/blogs/#{article.prefix_options[:blog_id]}/articles/#{article.id}", :target => 'blank' %></td>
+          <td><%= article.title %></td>
+          <td><%= article.created_at %> <%= link_to "(edit)", "/blogs/#{@blog.id}/articles/#{article.id}"  %>
+          </td>
+        </tr>
+        
+        <% 
+        
+
+        
+         %>
+        
+      <% end %>
+      </table>
+      
+    <% end %>
+    
+    <br/>
+    
+      </div> <!-- span8 / right-column -->

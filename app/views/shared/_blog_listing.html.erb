@@ -1,0 +1,35 @@
+  <div class="span8 offset1">
+    <h2>Blogs</h2>
+  
+    <% if blogs.blank? %>
+      <table class="table table-striped">
+        <tr>
+          <td><em>There are no blogs in your store.</em></td>
+        </tr>
+      </table>
+    
+    <% else %>
+  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+      <% blogs.each do |blog| %>
+        <tr>
+          <td><%= link_to blog.title, blog_articles_path(blog) %></td>
+          <td><%= blog.title %></td>
+          <td>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+      
+    <% end %>
+    
+    <br/>
+    
+      </div> <!-- span8 / right-column -->
