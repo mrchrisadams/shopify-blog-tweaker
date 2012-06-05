@@ -1,5 +1,7 @@
+<div class="row">
+  
   <div class="span8 offset1">
-    <h2>Blogs</h2>
+    <h2><%= t '.lead', :default => "Blogs associated with your store" %></h2>
   
     <% if blogs.blank? %>
       <table class="table table-striped">
@@ -9,21 +11,20 @@
       </table>
     
     <% else %>
-  
+      <% #TODO there's no good reason for this to be a table, given that there's only 
+      # one link to click, and probably less than 10 blogs max. Consider using a li and buttons instead
+      %>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Title</th>
-            <th>Date</th>
+            <th>Edit link</th>
           </tr>
         </thead>
       <% blogs.each do |blog| %>
         <tr>
-          <td><%= link_to blog.title, blog_articles_path(blog) %></td>
           <td><%= blog.title %></td>
-          <td>
-          </td>
+          <td><%= link_to "Changes article dates in #{blog.title}", blog_articles_path(blog) %></td>
         </tr>
       <% end %>
       </table>
@@ -33,3 +34,5 @@
     <br/>
     
       </div> <!-- span8 / right-column -->
+      
+</div> <!-- row -->

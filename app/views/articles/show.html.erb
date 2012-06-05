@@ -1,28 +1,35 @@
-  <%# binding.pry %>
 <header class="jumbotron">
   <div class="inner">
     <div class="container">
       <h1 style="letter-spacing:-3px; margin-bottom:20px;">Where do I start?</h1>
-      <p class="lead">An <strong>intro</strong> to using the Shopify App Template<br/>
-      including information on the <strong>Shopify API</strong> and <strong>Bootstrap,</strong><br/>
-      just to get the ball rolling.</p>
+      <p class="lead"><%= t '.instructions', :default => "Use the date picker to change the date of a published blog article" %><p>
     </div><!-- /container -->
   </div>
 </header>
 
 
-<%# binding.pry %>
-<%= form_for @article, :url => blog_article_path(@blog) do |f| -%>
 
-<%= f.label :published_at, "Published At" %>
+<div class="well">
+  <h3><%= @article.title %> <small>published at <%= Time.parse(@article.published_at).strftime("%Y %b %d - %H:%M")%></small></h3>
+
+<%= form_for @article, :url => blog_article_path(@blog), :html => {:class => 'form-inline' } do |f| -%>
+
+<%= f.label :published_at, "New published_at date:" %>
 <%= f.text_field :published_at, 
   :value => DateTime.parse(@article.published_at).strftime("%d/%m/%Y"), 
   :class => "datepicker span2" %>
   
-  <%= f.button "Submit" %>
+  <%= f.button "Submit", :class => "btn" %>
   
 <% end -%>
 
+
+  <div style="margin-top:18px;">
+  
+    <%= @article.body_html.html_safe %>
+    
+  </div>
+</div>
 
 
 <script type="text/javascript" charset="utf-8">

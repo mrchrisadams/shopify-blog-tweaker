@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'shopify_app'
 gem 'less-rails'
 gem 'less-rails-bootstrap'
+gem 'foreman'
 
 group 'development' do
   gem 'sextant'

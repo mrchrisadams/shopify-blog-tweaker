@@ -3,8 +3,6 @@ BlogTweaker::Application.routes.draw do
 
   match 'welcome'            => 'home#welcome'
 
-  match 'design'             => 'home#design'
-
   match 'login'              => 'login#index',        :as => :login
 
   match 'login/authenticate' => 'login#authenticate', :as => :authenticate
