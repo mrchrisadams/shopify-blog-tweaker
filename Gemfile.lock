@@ -85,6 +85,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-shopify-oauth2 (1.0.0)
       omniauth-oauth2 (~> 1.0.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     pry (0.9.9.6)
       coderay (~> 1.0.5)
@@ -162,6 +163,7 @@ DEPENDENCIES
   less-rails-bootstrap
   libv8
   log_buddy
+  pg
   pry
   quiet_assets (>= 1.0.0)
   rails (= 3.2.5)

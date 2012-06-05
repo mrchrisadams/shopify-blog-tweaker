@@ -11,6 +11,7 @@ gem 'shopify_app'
 gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'foreman'
+  gem 'pg'
 
 group 'development' do
   gem 'sqlite3'
@@ -19,10 +20,6 @@ group 'development' do
   gem 'awesome_print'
   gem 'log_buddy'
   gem 'quiet_assets', '>= 1.0.0'
-end
-
-group :production do
-  gem 'pg'
 end
 
 # Gems used only for assets and not required
